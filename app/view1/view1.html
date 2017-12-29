@@ -1,1 +1,12 @@
-<p>This is the partial for view 1.</p>
+<div ng-controller="BA0010UA as ba0010ua">
+    <!-- <p>This is the partial for view 1.</p> -->
+    <h1>BA0010UA</h1>
+
+    <input type="text" ng-model="ba0010ua.text">
+    <button type="submit" ng-click="ba0010ua.send()">送信</button>
+
+    <hr>
+
+    <input type="text" ng-model="ba0010ua.newText">
+    <button type="button" ng-click="ba0010ua.change()">書き換え</button>
+</div>
