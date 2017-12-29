@@ -5,14 +5,23 @@ class BA0010UA {
   constructor() {
     this.text = 'I`m View1';
     this.newText = '';
+    this.active = false;
+    this.name = '';
+    this.age = null;
   }
 
   send() {
-    console.log('send called!!!', this.text);
+    // console.log('send called!!!', this.text);
+    console.log('send called!!!', this.name, this.age);
   }
 
   change() {
     this.text = this.newText;
+  }
+
+  isValid() {
+    // return this.text !== '';
+    return this.name !== '' && (this.age !== null && this.age >= 20);
   }
 
 }
