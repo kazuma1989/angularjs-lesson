@@ -8,15 +8,21 @@ class BA0010UA {
     this.text = 'I`m View1';
     this.newText = '';
     this.active = false;
-    this.name = '';
-    this.age = null;
+    this.name = 'kayorin';
+    this.age = 24;
   }
 
   send() {
     // console.log('send called!!!', this.text);
     // console.log('send called!!!', this.name, this.age);
 
-    this.ba0010uModel.send();
+    this.ba0010uModel.send().then((data) => {
+      console.log(data);
+
+      let name = data.name;
+      let age = data.age;
+      console.log(`I'm ${name}, ${age} year old.`);
+    });
   }
 
   change() {

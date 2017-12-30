@@ -2,13 +2,25 @@ class BA0010UModel {
 
     constructor($http) {
         this.$http = $http;
+
+        // this.name = '';
     }
 
     send() {
         console.log('send called!!!');
-        this.$http.get('http://localhost:3000/user/0').then((resp) => {
+
+        return this.$http.get('http://localhost:3000/user/0').then((resp) => {
             console.log(resp);
+
+            // return resp;
+            return resp.data;
         });
+
+        // let reqDto = {};
+        // reqDto.name = this.name;
+        // this.ba0010uApi.send(reqDto).then((respDto) => {
+        //     console.log(respDto);
+        // });
     }
 
 }
