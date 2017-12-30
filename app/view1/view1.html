@@ -2,13 +2,27 @@
     <!-- <p>This is the partial for view 1.</p> -->
     <h1>BA0010UA</h1>
 
-    <input type="text" ng-model="ba0010ua.name">
-    <input type="number" ng-model="ba0010ua.age">
-    <!-- <input type="checkbox" ng-model="ba0010ua.active"> -->
-    <button type="submit" ng-disabled="!ba0010ua.isValid()" ng-click="ba0010ua.send()">送信</button>
+    <form name="myForm" novalidate>
+        <input name="name" type="text" ng-model="ba0010ua.name" required ng-minlength="3">
+        <span ng-show="myForm.name.$invalid">
+            名前は必須です
+        </span>
 
-    <hr>
+        <input name="age" type="number" ng-model="ba0010ua.age" required ng-min="20">
+        <span ng-show="myForm.age.$invalid">
+            年齢は20歳以上です
+        </span>
+        <span ng-show="myForm.name.$invalid && myForm.age.$invalid">
+            両方ともバリデーションエラーですね
+        </span>
+        <!-- <input type="checkbox" ng-model="ba0010ua.active"> -->
 
-    <input type="text" ng-model="ba0010ua.newText">
-    <button type="button" ng-click="ba0010ua.change()">書き換え</button>
+        <!-- <button type="submit" ng-disabled="!ba0010ua.isValid()" ng-click="ba0010ua.send()">送信</button> -->
+        <button type="submit" ng-disabled="myForm.$invalid" ng-click="ba0010ua.send()">送信</button>
+
+        <hr>
+
+        <input type="text" ng-model="ba0010ua.newText">
+        <button type="button" ng-click="ba0010ua.change()">書き換え</button>
+    </form>
 </div>
