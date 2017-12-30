@@ -39,4 +39,7 @@ angular.module('myApp.view1')
     });
   }])
 
-  .controller('BA0010UA', ['BA0010UModel', BA0010UA]);
+  .controller('BA0010UA', ['IBA0010UModel', BA0010UA]);
+
+  // let ba0010uModel = new BA0010UModel($http);
+  // new BA0010UA(ba0010uModel);
